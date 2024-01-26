@@ -16,20 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hm-Au-kTy">
-                                <rect key="frame" x="159" y="408.66666666666669" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OsE-4K-B1G">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5W2-bx-6DI">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5W2-bx-6DI" id="hDN-CA-ISo">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="tempButtonTapped:" destination="2NH-np-aA9" eventType="touchUpInside" id="3BH-wW-R0j"/>
+                                    <outlet property="dataSource" destination="2NH-np-aA9" id="Xh5-VY-9Jp"/>
+                                    <outlet property="delegate" destination="2NH-np-aA9" id="lOg-hc-m4f"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cVo-V1-tCx"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5hm-Au-kTy" firstAttribute="centerX" secondItem="NQa-Cc-ASX" secondAttribute="centerX" id="edy-gd-RT2"/>
-                            <constraint firstItem="5hm-Au-kTy" firstAttribute="centerY" secondItem="NQa-Cc-ASX" secondAttribute="centerY" id="sco-tD-TBU"/>
+                            <constraint firstItem="OsE-4K-B1G" firstAttribute="top" secondItem="NQa-Cc-ASX" secondAttribute="topMargin" id="1bQ-Ww-lzM"/>
+                            <constraint firstItem="cVo-V1-tCx" firstAttribute="trailing" secondItem="OsE-4K-B1G" secondAttribute="trailing" id="TTu-um-nBf"/>
+                            <constraint firstItem="OsE-4K-B1G" firstAttribute="leading" secondItem="cVo-V1-tCx" secondAttribute="leading" id="Wbl-S1-81L"/>
+                            <constraint firstAttribute="bottom" secondItem="OsE-4K-B1G" secondAttribute="bottom" id="rh2-r3-8iJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Colors" id="ZL2-kT-1Iu"/>
@@ -79,9 +91,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
